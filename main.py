@@ -17,23 +17,24 @@ t.colormode(255)
 #tim.speed()
 #nextposition function
 # empezar en una esquina, tamaño del canvas
-t.screensize(500,500)
+#t.screensize(500,500)
 jim.up()
-inicial_x = -400
-inicial_y = -300
-jim.setpos(inicial_x, inicial_y)
-largo = 10
-alto = 10
-jim.speed(0)
 
-#hace una linea
-#subir regresar hacer una l[inea
-#medir el espacio
-for a in range(alto):
-    for l in range(largo):
-       jim.forward(72)
-       jim.color(random.choice(color_list))
-       #print(color)
-       jim.dot(30)
-    inicial_y += 70
+#largo = 10
+#alto = 10
+jim.speed(0)
+def hirst(largo = 10, alto = 10):
+    t.screensize(largo * 50, alto * 50 )
+    inicial_x = -400
+    inicial_y = -300
     jim.setpos(inicial_x, inicial_y)
+    for a in range(alto):
+        for l in range(largo):
+           jim.forward(largo * 7.2)
+           jim.color(random.choice(color_list))
+           #print(color)
+           jim.dot(30)
+        inicial_y += alto * 7 #70
+        jim.setpos(inicial_x, inicial_y)
+
+hirst()
